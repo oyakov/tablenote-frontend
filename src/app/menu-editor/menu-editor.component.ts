@@ -24,7 +24,7 @@ export class MenuEditorComponent implements OnInit {
 
   getMenuItems(): void {
     // TODO: Getting mocked items for now. Provide an elaborate implementation
-    this.menuItems = this.menuService.getMockMenuItems();
+    this.menuService.getMenuItems().subscribe(menuItems => this.menuItems = menuItems);
   }
 
 }
