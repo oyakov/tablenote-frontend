@@ -1,0 +1,16 @@
+<div *ngIf="menuItem">
+    <h2>Позиция: {{menuItem.name}}</h2>
+    <div><span>Номер п/п: </span>{{menuItem.id}}</div>
+    <div>
+        <label>
+            Название:
+            <input [(ngModel)]="menuItem.name" placeholder="name"/>
+        </label>
+    </div>
+    <div>
+        <label>
+            Стоимость:
+            <input [(ngModel)]="menuItem.price" placeholder="price" />
+        </label>
+    </div>
+</div>

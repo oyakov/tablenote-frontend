@@ -1,0 +1,10 @@
+<h2>Редактор меню</h2>
+<ul class="items">
+   <li *ngFor="let item of menuItems"
+        [class.selected]="item === selectedItem"
+        (click)="onSelect(item)">
+        <span class="badge">{{item.id}}</span><span>{{item.name}}</span><span class="badgeprice">{{item.price}}</span>
+   </li> 
+</ul>
+
+<app-menu-item [menuItem]="selectedItem"></app-menu-item>
