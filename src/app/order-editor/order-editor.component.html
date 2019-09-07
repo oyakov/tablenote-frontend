@@ -1,0 +1,13 @@
+<h2>Редактор заказов</h2>
+<ul class="orders">
+    <li *ngFor="let order of orders"
+        [class.selected]="order === selectedOrder"
+        (click)="onSelect(order)">
+        <a class="link" routerLink="/order/{{order.id}}">
+            <span class="badge">{{orders.indexOf(order) + 1}}</span><span>{{order.table.name}}</span><span class="badgeprice">{{getTotal(order)}}</span>
+        </a>
+        
+    </li>
+</ul>
+
+<app-order [order]="selectedOrder"></app-order>

@@ -1,1 +1,16 @@
-<p>table-editor works!</p>
+<h2>Редактор столов</h2>
+<ul class="tables">
+   <li *ngFor="let table of tables"
+        [class.selected]="table === selectedTable"
+        (click)="onSelect(table)">
+        <span class="badge">{{tables.indexOf(table) + 1}} </span><span>{{table.name}}</span>
+   </li>
+   <li
+      [class.selected]="newSelected"
+      (click)="onSelectNew()">
+      <span class="badge">Новый</span><span>{{newItem == null? newItemTemplate.name: newItem.name}}</span><span class="badgeprice">{{newItem == null? newItemTemplate.price: newItem.price}}</span>
+   </li>
+</ul>
+
+<app-table [table]="selectedTable" [isCreateNew]="false" (newTableList)="onNewTableList($event)"></app-table>
+<app-table [table]="newItem" [isCreateNew]="true" (newTableList)="onNewTableList($event)"></app-table>

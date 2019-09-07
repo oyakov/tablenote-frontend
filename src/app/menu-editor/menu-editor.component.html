@@ -3,8 +3,14 @@
    <li *ngFor="let item of menuItems"
         [class.selected]="item === selectedItem"
         (click)="onSelect(item)">
-        <span class="badge">{{item.id}}</span><span>{{item.name}}</span><span class="badgeprice">{{item.price}}</span>
-   </li> 
+        <span class="badge">{{menuItems.indexOf(item) + 1}}</span><span>{{item.name}}</span><span class="badgeprice">{{item.price}}</span>
+   </li>
+   <li
+      [class.selected]="newSelected"
+      (click)="onSelectNew()">
+      <span class="badge">Новый</span><span>{{newItem == null? newItemTemplate.name: newItem.name}}</span><span class="badgeprice">{{newItem == null? newItemTemplate.price: newItem.price}}</span>
+   </li>
 </ul>
 
-<app-menu-item [menuItem]="selectedItem"></app-menu-item>
+<app-menu-item [menuItem]="selectedItem" [isCreateNew]="false" (newMenuList)="onNewMenuList($event)"></app-menu-item>
+<app-menu-item [menuItem]="newItem" [isCreateNew]="true" (newMenuList)="onNewMenuList($event)"></app-menu-item>

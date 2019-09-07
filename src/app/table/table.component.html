@@ -1,0 +1,13 @@
+<div *ngIf="table">
+    <h2>Стол: {{table.name}}</h2>
+    <div><span>Id: </span>{{table.id}}</div>
+    <div>
+        <label>
+            Название:
+            <input [(ngModel)]="table.name" placeholder="name"/>
+        </label>
+    </div>
+
+    <button (click)="applyChanges()">Сохранить</button>
+    <button (click)="deleteTable()" [disabled]="isCreateNew">Удалить</button>
+</div>

@@ -1,0 +1,22 @@
+<div *ngIf="order">
+    <h2>Заказ: {{order.name}}</h2>
+    <div><span>Id: </span>{{order.id}}</div>
+    <div>
+        <label>Стол: {{order.table.name}}</label>
+    </div>
+    <ul>
+        <li *ngFor="let item of order.items">
+            <span>{{item.name}}: {{item.price}}</span>
+        </li>
+    </ul>
+
+    <select>
+        <option *ngFor="let item of menuList" value="{{item}}">{{item.name}}</option>
+    </select>
+    <div></div>
+
+    <button routerLink="/order/{{order.id}}/add">Добавить позицию</button>
+    <button (click)="applyChanges()">Сохранить</button>
+    <button (click)="deleteItem()" [disabled]="isCreateNew">Удалить</button>
+    <button (click)="goBack()">Назад</button>
+</div>

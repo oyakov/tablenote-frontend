@@ -7,18 +7,26 @@ import { AppComponent } from './app.component';
 import { MenuEditorComponent } from './menu-editor/menu-editor.component';
 import { TableEditorComponent } from './table-editor/table-editor.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
+import { AppRoutingModule } from './app-routing.module';
+import { TableComponent } from './table/table.component';
+import { OrderEditorComponent } from './order-editor/order-editor.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuEditorComponent,
     TableEditorComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    TableComponent,
+    OrderEditorComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

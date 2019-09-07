@@ -1,6 +1,6 @@
 <div *ngIf="menuItem">
     <h2>Позиция: {{menuItem.name}}</h2>
-    <div><span>Номер п/п: </span>{{menuItem.id}}</div>
+    <div><span>Id: </span>{{menuItem.id}}</div>
     <div>
         <label>
             Название:
@@ -14,6 +14,6 @@
         </label>
     </div>
 
-    <button
-    (click)="applyChanges()">Сохранить</button>
+    <button (click)="applyChanges()">Сохранить</button>
+    <button (click)="deleteItem()" [disabled]="isCreateNew">Удалить</button>
 </div>
